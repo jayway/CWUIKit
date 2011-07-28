@@ -1,5 +1,5 @@
 //
-//  CWUIKit.h
+//  SampleAppAppDelegate.m
 //  CWUIKit
 //  Created by Fredrik Olsson 
 //
@@ -28,27 +28,52 @@
 //  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#import "CWGeometry.h"
-#import "CWAuxiliaryAction.h"
-#import "CWBackgroundBars.h"
-#import "CWCalloutView.h"
-#import "CWCalendarView.h"
-#import "CWColumnTableView.h"
-#import "CWColumnTableViewCell.h"
-#import "CWTableViewCellBackgroundView.h"
-#import "CWLinearLayoutView.h"
-#import "CWPrimaryViewWindow.h"
-#import "CWSearchBar.h"
-#import "CWStyledSegmentedControl.h"
-#import "CWTextField.h"
+#import "SampleAppAppDelegate.h"
 #import "CWViewSheet.h"
-#import "NSObject+CWNibLocalizations.h"
-#import "UIApplication+CWAdditions.h"
-#import "UIAlertView+CWErrorHandler.h"
-#import "UIBarButtonItem+CWAdditions.h"
-#import "UIButton+CWAdditions.h"
-#import "UIColor+CWAdditions.h"
-#import "UIDevice+CWCapabilities.h"
-#import "UIImage+CWAdditions.h"
-#import "UIView+CWVisualCue.h"
-#import "UIViewController+CWPopover.h"
+
+@implementation SampleAppAppDelegate
+
+@synthesize window;
+
+
+#pragma mark -
+#pragma mark Application lifecycle
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions;
+{
+    [self.window makeKeyAndVisible];    
+    return YES;
+}
+
+-(IBAction)showCalendar;
+{
+    CWCalendarView* calendarView = [[[CWCalendarView alloc] init] autorelease];
+    calendarView.delegate = self;
+    calendarView.minimumDate = [NSDate dateWithTimeIntervalSinceNow:-86400 * 14];
+    calendarView.maximumDate = [NSDate dateWithTimeIntervalSinceNow:86400 * 56];
+
+    NSString* title = aswitch.on ? @"Select Date" : nil;
+	CWViewSheet* sheet = [[[CWViewSheet alloc] initWithContentView:calendarView
+                                                             title:title] autorelease];
+    [sheet showFromRect:button.bounds inView:button animated:YES];
+}
+
+-(BOOL)calendarView:(CWCalendarView *)view canSelectDate:(NSDate *)date;
+{
+    NSDateComponents* components = [[NSCalendar currentCalendar] components:NSWeekdayCalendarUnit|NSDayCalendarUnit fromDate:date];
+    NSInteger weekday = [components weekday];
+    return weekday != 1 && weekday != 7 && [components day] != 13;
+}
+
+-(BOOL)calendarView:(CWCalendarView *)view hasAnnotationForDate:(NSDate *)date;
+{
+    NSInteger foo = (int)([date timeIntervalSinceReferenceDate] / 3000) % 3;
+    return foo == 0;
+}
+
+-(void)calendarView:(CWCalendarView *)view didSelectDate:(NSDate *)date;
+{
+    label.text = [date description];
+}
+
+@end

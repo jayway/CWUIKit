@@ -1,5 +1,5 @@
 //
-//  CWUIKit.h
+//  SampleAppAppDelegate.h
 //  CWUIKit
 //  Created by Fredrik Olsson 
 //
@@ -28,27 +28,19 @@
 //  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#import "CWGeometry.h"
-#import "CWAuxiliaryAction.h"
-#import "CWBackgroundBars.h"
-#import "CWCalloutView.h"
+#import <UIKit/UIKit.h>
 #import "CWCalendarView.h"
-#import "CWColumnTableView.h"
-#import "CWColumnTableViewCell.h"
-#import "CWTableViewCellBackgroundView.h"
-#import "CWLinearLayoutView.h"
-#import "CWPrimaryViewWindow.h"
-#import "CWSearchBar.h"
-#import "CWStyledSegmentedControl.h"
-#import "CWTextField.h"
-#import "CWViewSheet.h"
-#import "NSObject+CWNibLocalizations.h"
-#import "UIApplication+CWAdditions.h"
-#import "UIAlertView+CWErrorHandler.h"
-#import "UIBarButtonItem+CWAdditions.h"
-#import "UIButton+CWAdditions.h"
-#import "UIColor+CWAdditions.h"
-#import "UIDevice+CWCapabilities.h"
-#import "UIImage+CWAdditions.h"
-#import "UIView+CWVisualCue.h"
-#import "UIViewController+CWPopover.h"
+
+@interface SampleAppAppDelegate : NSObject <UIApplicationDelegate, CWCalendarViewDelegate> {
+    UIWindow *window;
+    IBOutlet UISwitch* aswitch; 
+    IBOutlet UILabel* label;
+    IBOutlet UIButton* button;
+}
+
+@property (nonatomic, retain) IBOutlet UIWindow *window;
+
+-(IBAction)showCalendar;
+
+@end
+

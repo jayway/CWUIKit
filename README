@@ -45,11 +45,13 @@ The public headerfiles are the official source of documentation. This section
 only describes a subset of the main funcationality.
 
 * CWAuxiliaryActions - Use blocks as callbacks for UIAlertView & UIActionSheet.
+* CWCalendarView - A view visually like the iPhone Calendar app.
 * CWCalloutView - Configurable callout view like in MapKit.
 * CWColumnTableView - Like UITableView with multiple columns
 * CWTableViewBackgroundCell - Configurabe background and highlight for cells.
 * CWLinearLayout - Rule based linear layout, when springs&struts comes short.
 * CWNibLocalization - Prefix text with @ in IB gets localized from strings.
+* CWViewSheet - A helper class for presenting views like a sheet.
 * UIAlertView - Conviniece additions to construct from NSError instances.
 * UIColor - Additions for extracting components, and accessing standard colors.
 * UIDevice - Conviniece additions for quering for availible capabilities.

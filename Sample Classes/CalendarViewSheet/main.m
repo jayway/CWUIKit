@@ -1,5 +1,5 @@
 //
-//  CWUIKit.h
+//  main.m
 //  CWUIKit
 //  Created by Fredrik Olsson 
 //
@@ -28,27 +28,12 @@
 //  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#import "CWGeometry.h"
-#import "CWAuxiliaryAction.h"
-#import "CWBackgroundBars.h"
-#import "CWCalloutView.h"
-#import "CWCalendarView.h"
-#import "CWColumnTableView.h"
-#import "CWColumnTableViewCell.h"
-#import "CWTableViewCellBackgroundView.h"
-#import "CWLinearLayoutView.h"
-#import "CWPrimaryViewWindow.h"
-#import "CWSearchBar.h"
-#import "CWStyledSegmentedControl.h"
-#import "CWTextField.h"
-#import "CWViewSheet.h"
-#import "NSObject+CWNibLocalizations.h"
-#import "UIApplication+CWAdditions.h"
-#import "UIAlertView+CWErrorHandler.h"
-#import "UIBarButtonItem+CWAdditions.h"
-#import "UIButton+CWAdditions.h"
-#import "UIColor+CWAdditions.h"
-#import "UIDevice+CWCapabilities.h"
-#import "UIImage+CWAdditions.h"
-#import "UIView+CWVisualCue.h"
-#import "UIViewController+CWPopover.h"
+#import <UIKit/UIKit.h>
+
+int main(int argc, char *argv[]) {
+    
+    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
+    int retVal = UIApplicationMain(argc, argv, nil, nil);
+    [pool release];
+    return retVal;
+}

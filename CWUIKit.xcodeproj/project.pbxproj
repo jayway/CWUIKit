@@ -34,9 +34,23 @@
 		A65D9BE8137BD56C007D25A0 /* bar_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A65D9BE4137BD56B007D25A0 /* bar_button@2x.png */; };
 		A65D9C07137BD9E3007D25A0 /* CWBackgroundBars.h in Headers */ = {isa = PBXBuildFile; fileRef = A65D9C05137BD9E3007D25A0 /* CWBackgroundBars.h */; };
 		A65D9C08137BD9E3007D25A0 /* CWBackgroundBars.m in Sources */ = {isa = PBXBuildFile; fileRef = A65D9C06137BD9E3007D25A0 /* CWBackgroundBars.m */; };
+		A691863113E1B39F006F25AD /* CWCalendarView.h in Headers */ = {isa = PBXBuildFile; fileRef = A691862D13E1B39F006F25AD /* CWCalendarView.h */; };
+		A691863213E1B39F006F25AD /* CWCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = A691862E13E1B39F006F25AD /* CWCalendarView.m */; };
+		A691863313E1B39F006F25AD /* CWViewSheet.h in Headers */ = {isa = PBXBuildFile; fileRef = A691862F13E1B39F006F25AD /* CWViewSheet.h */; };
+		A691863413E1B39F006F25AD /* CWViewSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = A691863013E1B39F006F25AD /* CWViewSheet.m */; };
+		A69186B113E1B464006F25AD /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A42D55136988B00051E0C7 /* OpenGLES.framework */; };
+		A69186B213E1B464006F25AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+		A69186B313E1B464006F25AD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6ED9127136947C4002DCEE4 /* CoreGraphics.framework */; };
+		A69186B413E1B464006F25AD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6ED9129136947C4002DCEE4 /* QuartzCore.framework */; };
+		A69186B513E1B464006F25AD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6ED912B136947C4002DCEE4 /* UIKit.framework */; };
+		A69186B613E1B464006F25AD /* libCWUIKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AAC07E0554694100DB518D /* libCWUIKit.a */; };
+		A69186C413E1B492006F25AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A69186BF13E1B492006F25AD /* main.m */; };
+		A69186C513E1B492006F25AD /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A69186C013E1B492006F25AD /* MainWindow.xib */; };
+		A69186C613E1B492006F25AD /* SampleAppAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A69186C213E1B492006F25AD /* SampleAppAppDelegate.m */; };
 		A6A42D56136988B00051E0C7 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A42D55136988B00051E0C7 /* OpenGLES.framework */; };
 		A6A97543136ABCA50065D9BE /* CWUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A6A97542136ABCA50065D9BE /* CWUIKit.h */; };
 		A6A975D3136AC3A50065D9BE /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A42D55136988B00051E0C7 /* OpenGLES.framework */; };
+		A6AFA88A13E1B9730064A3E3 /* libCWFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A6ED9282136959A8002DCEE4 /* libCWFoundation.a */; };
 		A6DAA6A21383E36000518CC8 /* CWColumnTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = A6DAA69C1383E36000518CC8 /* CWColumnTableView.h */; };
 		A6DAA6A31383E36000518CC8 /* CWColumnTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DAA69D1383E36000518CC8 /* CWColumnTableView.m */; };
 		A6DAA6A41383E36000518CC8 /* CWColumnTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = A6DAA69E1383E36000518CC8 /* CWColumnTableViewCell.h */; };
@@ -105,6 +119,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = A6B254EE136BF9E700D5F57F;
 			remoteInfo = CWNetworkMonitor;
+		};
+		A69186A913E1B464006F25AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = CWUIKit;
 		};
 		A6A973141369B7150065D9BE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -192,6 +213,17 @@
 		A65D9BE4137BD56B007D25A0 /* bar_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bar_button@2x.png"; path = "Resources/bar_button@2x.png"; sourceTree = "<group>"; };
 		A65D9C05137BD9E3007D25A0 /* CWBackgroundBars.h */ = {isa = PBXFileReference; fileEncoding = 5; lastKnownFileType = sourcecode.c.h; name = CWBackgroundBars.h; path = Classes/CWBackgroundBars.h; sourceTree = "<group>"; };
 		A65D9C06137BD9E3007D25A0 /* CWBackgroundBars.m */ = {isa = PBXFileReference; fileEncoding = 5; lastKnownFileType = sourcecode.c.objc; name = CWBackgroundBars.m; path = Classes/CWBackgroundBars.m; sourceTree = "<group>"; };
+		A691862D13E1B39F006F25AD /* CWCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 5; lastKnownFileType = sourcecode.c.h; name = CWCalendarView.h; path = Classes/CWCalendarView.h; sourceTree = "<group>"; };
+		A691862E13E1B39F006F25AD /* CWCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CWCalendarView.m; path = Classes/CWCalendarView.m; sourceTree = "<group>"; };
+		A691862F13E1B39F006F25AD /* CWViewSheet.h */ = {isa = PBXFileReference; fileEncoding = 5; lastKnownFileType = sourcecode.c.h; name = CWViewSheet.h; path = Classes/CWViewSheet.h; sourceTree = "<group>"; };
+		A691863013E1B39F006F25AD /* CWViewSheet.m */ = {isa = PBXFileReference; fileEncoding = 5; lastKnownFileType = sourcecode.c.objc; name = CWViewSheet.m; path = Classes/CWViewSheet.m; sourceTree = "<group>"; };
+		A69186BA13E1B464006F25AD /* CalendarViewSheetSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalendarViewSheetSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A69186BC13E1B464006F25AD /* CalloutViewSampleApp-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CalloutViewSampleApp-Info copy.plist"; sourceTree = "<group>"; };
+		A69186BE13E1B492006F25AD /* CalendarViewSheetSampleApp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 5; lastKnownFileType = text.plist.xml; path = "CalendarViewSheetSampleApp-Info.plist"; sourceTree = "<group>"; };
+		A69186BF13E1B492006F25AD /* main.m */ = {isa = PBXFileReference; fileEncoding = 5; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A69186C013E1B492006F25AD /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		A69186C113E1B492006F25AD /* SampleAppAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 5; lastKnownFileType = sourcecode.c.h; path = SampleAppAppDelegate.h; sourceTree = "<group>"; };
+		A69186C213E1B492006F25AD /* SampleAppAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 5; lastKnownFileType = sourcecode.c.objc; path = SampleAppAppDelegate.m; sourceTree = "<group>"; };
 		A6A42D55136988B00051E0C7 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		A6A97542136ABCA50065D9BE /* CWUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CWUIKit.h; path = Classes/CWUIKit.h; sourceTree = "<group>"; };
 		A6DAA69C1383E36000518CC8 /* CWColumnTableView.h */ = {isa = PBXFileReference; fileEncoding = 5; lastKnownFileType = sourcecode.c.h; name = CWColumnTableView.h; path = Classes/CWColumnTableView.h; sourceTree = "<group>"; };
@@ -253,6 +285,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A69186B013E1B464006F25AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A69186B113E1B464006F25AD /* OpenGLES.framework in Frameworks */,
+				A69186B213E1B464006F25AD /* Foundation.framework in Frameworks */,
+				A69186B313E1B464006F25AD /* CoreGraphics.framework in Frameworks */,
+				A69186B413E1B464006F25AD /* QuartzCore.framework in Frameworks */,
+				A69186B513E1B464006F25AD /* UIKit.framework in Frameworks */,
+				A69186B613E1B464006F25AD /* libCWUIKit.a in Frameworks */,
+				A6AFA88A13E1B9730064A3E3 /* libCWFoundation.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A6DAA6BC1383E40F00518CC8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -302,6 +348,7 @@
 				A6ED92B913695A43002DCEE4 /* CalloutViewSampleApp.app */,
 				A6ED92ED13695BD3002DCEE4 /* CWUIKitResources.bundle */,
 				A6DAA6BE1383E40F00518CC8 /* ColumnTableViewSampleApp.app */,
+				A69186BA13E1B464006F25AD /* CalendarViewSheetSampleApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -348,6 +395,8 @@
 				A6FF9FA11369A3FD0083F2EC /* UIAlertView+AuxiliaryAction.m */,
 				A65D9C05137BD9E3007D25A0 /* CWBackgroundBars.h */,
 				A65D9C06137BD9E3007D25A0 /* CWBackgroundBars.m */,
+				A691862D13E1B39F006F25AD /* CWCalendarView.h */,
+				A691862E13E1B39F006F25AD /* CWCalendarView.m */,
 				A6ED928A13695A14002DCEE4 /* CWCalloutView.h */,
 				A6ED928B13695A14002DCEE4 /* CWCalloutView.m */,
 				A6DAA69C1383E36000518CC8 /* CWColumnTableView.h */,
@@ -362,6 +411,8 @@
 				A6ED928F13695A14002DCEE4 /* CWPrimaryViewWindow.m */,
 				A65D9B5D137BC3EA007D25A0 /* CWStyledSegmentedControl.h */,
 				A65D9B5E137BC3EA007D25A0 /* CWStyledSegmentedControl.m */,
+				A691862F13E1B39F006F25AD /* CWViewSheet.h */,
+				A691863013E1B39F006F25AD /* CWViewSheet.m */,
 				A6ED929013695A14002DCEE4 /* NSObject+CWNibLocalizations.h */,
 				A6ED929113695A14002DCEE4 /* NSObject+CWNibLocalizations.m */,
 				A6DAAB1C13853C5800518CC8 /* UIApplication+CWAdditions.h */,
@@ -384,6 +435,19 @@
 				A6ED929913695A14002DCEE4 /* UIViewController+CWPopover.m */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		A69186BD13E1B492006F25AD /* CalendarViewSheet */ = {
+			isa = PBXGroup;
+			children = (
+				A69186BE13E1B492006F25AD /* CalendarViewSheetSampleApp-Info.plist */,
+				A69186BF13E1B492006F25AD /* main.m */,
+				A69186C113E1B492006F25AD /* SampleAppAppDelegate.h */,
+				A69186C213E1B492006F25AD /* SampleAppAppDelegate.m */,
+				A69186C013E1B492006F25AD /* MainWindow.xib */,
+			);
+			name = CalendarViewSheet;
+			path = "Sample Classes/CalendarViewSheet";
 			sourceTree = "<group>";
 		};
 		A6DAA6D91383E48C00518CC8 /* ColumnTableView */ = {
@@ -412,6 +476,7 @@
 			isa = PBXGroup;
 			children = (
 				A6DAA6D91383E48C00518CC8 /* ColumnTableView */,
+				A69186BD13E1B492006F25AD /* CalendarViewSheet */,
 				A6ED92AC13695A2A002DCEE4 /* CalloutView */,
 			);
 			name = "Sample Classes";
@@ -437,6 +502,7 @@
 				A6ED92B013695A2A002DCEE4 /* SampleAppAppDelegate.h */,
 				A6ED92B113695A2A002DCEE4 /* SampleAppAppDelegate.m */,
 				A6ED92AF13695A2A002DCEE4 /* MainWindow.xib */,
+				A69186BC13E1B464006F25AD /* CalloutViewSampleApp-Info copy.plist */,
 			);
 			name = CalloutView;
 			path = "Sample Classes/CalloutView";
@@ -496,12 +562,32 @@
 				A6DAAB1E13853C5800518CC8 /* UIApplication+CWAdditions.h in Headers */,
 				8B3096C51386662300EE9727 /* CWSearchBar.h in Headers */,
 				8B3096C71386662300EE9727 /* CWTextField.h in Headers */,
+				A691863113E1B39F006F25AD /* CWCalendarView.h in Headers */,
+				A691863313E1B39F006F25AD /* CWViewSheet.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		A69186A713E1B464006F25AD /* CalendarViewSheetSampleApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A69186B713E1B464006F25AD /* Build configuration list for PBXNativeTarget "CalendarViewSheetSampleApp" */;
+			buildPhases = (
+				A69186AA13E1B464006F25AD /* Resources */,
+				A69186AD13E1B464006F25AD /* Sources */,
+				A69186B013E1B464006F25AD /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A69186A813E1B464006F25AD /* PBXTargetDependency */,
+			);
+			name = CalendarViewSheetSampleApp;
+			productName = CalloutViewSampleApp;
+			productReference = A69186BA13E1B464006F25AD /* CalendarViewSheetSampleApp.app */;
+			productType = "com.apple.product-type.application";
+		};
 		A6DAA6BD1383E40F00518CC8 /* ColumnTableViewSampleApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A6DAA6C61383E41000518CC8 /* Build configuration list for PBXNativeTarget "ColumnTableViewSampleApp" */;
@@ -601,6 +687,7 @@
 				A6ED92EC13695BD3002DCEE4 /* CWUIKitResources */,
 				D2AAC07D0554694100DB518D /* CWUIKit */,
 				A6ED92B813695A43002DCEE4 /* CalloutViewSampleApp */,
+				A69186A713E1B464006F25AD /* CalendarViewSheetSampleApp */,
 				A6DAA6BD1383E40F00518CC8 /* ColumnTableViewSampleApp */,
 			);
 		};
@@ -645,6 +732,14 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A69186AA13E1B464006F25AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A69186C513E1B492006F25AD /* MainWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A6DAA6BA1383E40F00518CC8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -688,6 +783,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A69186AD13E1B464006F25AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A69186C413E1B492006F25AD /* main.m in Sources */,
+				A69186C613E1B492006F25AD /* SampleAppAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A6DAA6BB1383E40F00518CC8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -734,12 +838,19 @@
 				A6DAAB1F13853C5800518CC8 /* UIApplication+CWAdditions.m in Sources */,
 				8B3096C61386662300EE9727 /* CWSearchBar.m in Sources */,
 				8B3096C81386662300EE9727 /* CWTextField.m in Sources */,
+				A691863213E1B39F006F25AD /* CWCalendarView.m in Sources */,
+				A691863413E1B39F006F25AD /* CWViewSheet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A69186A813E1B464006F25AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2AAC07D0554694100DB518D /* CWUIKit */;
+			targetProxy = A69186A913E1B464006F25AD /* PBXContainerItemProxy */;
+		};
 		A6DAA6E91383E51700518CC8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D2AAC07D0554694100DB518D /* CWUIKit */;
@@ -825,6 +936,58 @@
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
 				USER_HEADER_SEARCH_PATHS = "Components/**";
+			};
+			name = Release;
+		};
+		A69186B813E1B464006F25AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = "Sample Classes/CalendarViewSheet/CalendarViewSheetSampleApp-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = CalendarViewSheetSampleApp;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A69186B913E1B464006F25AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = "CalloutViewSampleApp-Info copy.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = CalloutViewSampleApp;
+				SDKROOT = iphoneos;
+				ZERO_LINK = NO;
 			};
 			name = Release;
 		};
@@ -976,6 +1139,15 @@
 			buildConfigurations = (
 				1DEB922308733DC00010E9CD /* Debug */,
 				1DEB922408733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A69186B713E1B464006F25AD /* Build configuration list for PBXNativeTarget "CalendarViewSheetSampleApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A69186B813E1B464006F25AD /* Debug */,
+				A69186B913E1B464006F25AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
