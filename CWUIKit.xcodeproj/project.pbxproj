@@ -132,9 +132,9 @@
 			remoteGlobalIDString = D2AAC07D0554694100DB518D;
 			remoteInfo = CWUIKit;
 		};
-		A609632D13C7C19F005E7E4B /* PBXContainerItemProxy */ = {
+		A6DAA6E81383E51700518CC8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A6ED9279136959A8002DCEE4 /* CWFoundation.xcodeproj */;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = D2AAC07D0554694100DB518D;
 			remoteInfo = CWUIKit;
@@ -920,6 +920,9 @@
 		1DEB921F08733DC00010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/CWUIKit.dst;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
@@ -933,7 +936,10 @@
 		1DEB922008733DC00010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				DSTROOT = /tmp/CWUIKit.dst;
+				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = CWUIKit;
@@ -944,7 +950,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -1030,8 +1035,11 @@
 		A6DAA6C11383E41000518CC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
 				INFOPLIST_FILE = "Sample Classes/ColumnTableView/ColumnTableViewSampleApp-Info.plist";
@@ -1043,6 +1051,7 @@
 					UIKit,
 				);
 				PRODUCT_NAME = ColumnTableViewSampleApp;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1050,6 +1059,7 @@
 		A6DAA6C21383E41000518CC8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1064,7 +1074,9 @@
 					UIKit,
 				);
 				PRODUCT_NAME = ColumnTableViewSampleApp;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				ZERO_LINK = NO;
 			};
 			name = Release;
 		};
@@ -1085,7 +1097,11 @@
 		A6ED92BC13695A44002DCEE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
 				INFOPLIST_FILE = "Sample Classes/CalloutView/CalloutViewSampleApp-Info.plist";
@@ -1098,12 +1114,14 @@
 					UIKit,
 				);
 				PRODUCT_NAME = CalloutViewSampleApp;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
 		A6ED92BD13695A44002DCEE4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1119,6 +1137,8 @@
 					UIKit,
 				);
 				PRODUCT_NAME = CalloutViewSampleApp;
+				SDKROOT = iphoneos;
+				ZERO_LINK = NO;
 			};
 			name = Release;
 		};
@@ -1145,6 +1165,7 @@
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				PRODUCT_NAME = CWUIKitResources;
 				WRAPPER_EXTENSION = bundle;
+				ZERO_LINK = NO;
 			};
 			name = Release;
 		};
