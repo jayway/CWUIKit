@@ -86,7 +86,7 @@
 
 +(UIBarButtonItem*)barButtonItemWithTitle:(NSString*)title titleColor:(UIColor*)titleColor titleShadowColor:(UIColor*)titleShadowColor image:(UIImage*)image style:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action;
 {
-    if (style = UIBarButtonItemStylePlain) {
+    if (style == UIBarButtonItemStylePlain) {
     	return [self barButtonItemWithTitle:title
                                  titleColor:titleColor
                            titleShadowColor:titleShadowColor

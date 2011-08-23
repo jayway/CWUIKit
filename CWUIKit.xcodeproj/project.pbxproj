@@ -3,8 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
+
+/* Begin PBXAggregateTarget section */
+		A6E8C1A81404087C00C00910 /* CWUIKitEnsureDeps */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = A6E8C1A91404087C00C00910 /* Build configuration list for PBXAggregateTarget "CWUIKitEnsureDeps" */;
+			buildPhases = (
+				A6E8C1AC140408C500C00910 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = CWUIKitEnsureDeps;
+			productName = CWUIKitEnsureDeps;
+		};
+/* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
 		8B3096C51386662300EE9727 /* CWSearchBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B3096C11386662300EE9727 /* CWSearchBar.h */; };
@@ -50,7 +64,6 @@
 		A6A42D56136988B00051E0C7 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A42D55136988B00051E0C7 /* OpenGLES.framework */; };
 		A6A97543136ABCA50065D9BE /* CWUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A6A97542136ABCA50065D9BE /* CWUIKit.h */; };
 		A6A975D3136AC3A50065D9BE /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A42D55136988B00051E0C7 /* OpenGLES.framework */; };
-		A6AFA88A13E1B9730064A3E3 /* libCWFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A6ED9282136959A8002DCEE4 /* libCWFoundation.a */; };
 		A6DAA6A21383E36000518CC8 /* CWColumnTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = A6DAA69C1383E36000518CC8 /* CWColumnTableView.h */; };
 		A6DAA6A31383E36000518CC8 /* CWColumnTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DAA69D1383E36000518CC8 /* CWColumnTableView.m */; };
 		A6DAA6A41383E36000518CC8 /* CWColumnTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = A6DAA69E1383E36000518CC8 /* CWColumnTableViewCell.h */; };
@@ -72,7 +85,6 @@
 		A6ED9128136947C4002DCEE4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6ED9127136947C4002DCEE4 /* CoreGraphics.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		A6ED912A136947C4002DCEE4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6ED9129136947C4002DCEE4 /* QuartzCore.framework */; };
 		A6ED912C136947C4002DCEE4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6ED912B136947C4002DCEE4 /* UIKit.framework */; };
-		A6ED9285136959B3002DCEE4 /* libCWFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A6ED9282136959A8002DCEE4 /* libCWFoundation.a */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A6ED929A13695A14002DCEE4 /* CWAuxiliaryAction.h in Headers */ = {isa = PBXBuildFile; fileRef = A6ED928813695A14002DCEE4 /* CWAuxiliaryAction.h */; };
 		A6ED929B13695A14002DCEE4 /* CWAuxiliaryAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A6ED928913695A14002DCEE4 /* CWAuxiliaryAction.m */; };
 		A6ED929C13695A14002DCEE4 /* CWCalloutView.h in Headers */ = {isa = PBXBuildFile; fileRef = A6ED928A13695A14002DCEE4 /* CWCalloutView.h */; };
@@ -113,33 +125,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A610842F136ED42300D42782 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A6ED9279136959A8002DCEE4 /* CWFoundation.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A6B254EE136BF9E700D5F57F;
-			remoteInfo = CWNetworkMonitor;
-		};
 		A69186A913E1B464006F25AD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = D2AAC07D0554694100DB518D;
 			remoteInfo = CWUIKit;
-		};
-		A6A973141369B7150065D9BE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A6ED9279136959A8002DCEE4 /* CWFoundation.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A6A971981369B2D80065D9BE;
-			remoteInfo = NetworkMonitorSampleApp;
-		};
-		A6A973161369B7150065D9BE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A6ED9279136959A8002DCEE4 /* CWFoundation.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A6A971C41369B3C90065D9BE;
-			remoteInfo = XMLTranslatorSampleApp;
 		};
 		A6DAA6E81383E51700518CC8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -148,26 +139,54 @@
 			remoteGlobalIDString = D2AAC07D0554694100DB518D;
 			remoteInfo = CWUIKit;
 		};
-		A6ED9281136959A8002DCEE4 /* PBXContainerItemProxy */ = {
+		A6E879051404102800DFABA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A6ED9279136959A8002DCEE4 /* CWFoundation.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = CWFoundation;
+		};
+		A6E8C1BA1404091B00C00910 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A6ED9279136959A8002DCEE4 /* CWFoundation.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = D2AAC07E0554694100DB518D;
 			remoteInfo = CWFoundation;
 		};
-		A6ED9283136959A8002DCEE4 /* PBXContainerItemProxy */ = {
+		A6E8C1BC1404091B00C00910 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A6ED9279136959A8002DCEE4 /* CWFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A6B254EE136BF9E700D5F57F;
+			remoteInfo = CWNetworkMonitor;
+		};
+		A6E8C1BE1404091B00C00910 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A6ED9279136959A8002DCEE4 /* CWFoundation.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = A6ED914F13694AD8002DCEE4;
 			remoteInfo = UnitTests;
 		};
-		A6ED9286136959BB002DCEE4 /* PBXContainerItemProxy */ = {
+		A6E8C1C01404091B00C00910 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A6ED9279136959A8002DCEE4 /* CWFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A6A971981369B2D80065D9BE;
+			remoteInfo = NetworkMonitorSampleApp;
+		};
+		A6E8C1C21404091B00C00910 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A6ED9279136959A8002DCEE4 /* CWFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A6A971C41369B3C90065D9BE;
+			remoteInfo = XMLTranslatorSampleApp;
+		};
+		A6E8C1C4140409AA00C00910 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D2AAC07D0554694100DB518D;
-			remoteInfo = CWFoundation;
+			remoteGlobalIDString = A6E8C1A81404087C00C00910;
+			remoteInfo = CWUIKitEnsureDeps;
 		};
 		A6ED92C213695A85002DCEE4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -246,7 +265,7 @@
 		A6ED9127136947C4002DCEE4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A6ED9129136947C4002DCEE4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A6ED912B136947C4002DCEE4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		A6ED9279136959A8002DCEE4 /* CWFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CWFoundation.xcodeproj; path = Components/CWFoundation/CWFoundation.xcodeproj; sourceTree = "<group>"; };
+		A6ED9279136959A8002DCEE4 /* CWFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CWFoundation.xcodeproj; path = ../CWFoundation/CWFoundation.xcodeproj; sourceTree = SOURCE_ROOT; };
 		A6ED928813695A14002DCEE4 /* CWAuxiliaryAction.h */ = {isa = PBXFileReference; fileEncoding = 5; lastKnownFileType = sourcecode.c.h; name = CWAuxiliaryAction.h; path = Classes/CWAuxiliaryAction.h; sourceTree = "<group>"; };
 		A6ED928913695A14002DCEE4 /* CWAuxiliaryAction.m */ = {isa = PBXFileReference; fileEncoding = 5; lastKnownFileType = sourcecode.c.objc; name = CWAuxiliaryAction.m; path = Classes/CWAuxiliaryAction.m; sourceTree = "<group>"; };
 		A6ED928A13695A14002DCEE4 /* CWCalloutView.h */ = {isa = PBXFileReference; fileEncoding = 5; lastKnownFileType = sourcecode.c.h; name = CWCalloutView.h; path = Classes/CWCalloutView.h; sourceTree = "<group>"; };
@@ -295,7 +314,6 @@
 				A69186B413E1B464006F25AD /* QuartzCore.framework in Frameworks */,
 				A69186B513E1B464006F25AD /* UIKit.framework in Frameworks */,
 				A69186B613E1B464006F25AD /* libCWUIKit.a in Frameworks */,
-				A6AFA88A13E1B9730064A3E3 /* libCWFoundation.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,7 +351,6 @@
 				A6ED9128136947C4002DCEE4 /* CoreGraphics.framework in Frameworks */,
 				A6ED912A136947C4002DCEE4 /* QuartzCore.framework in Frameworks */,
 				A6ED912C136947C4002DCEE4 /* UIKit.framework in Frameworks */,
-				A6ED9285136959B3002DCEE4 /* libCWFoundation.a in Frameworks */,
 				A6A42D56136988B00051E0C7 /* OpenGLES.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -465,6 +482,18 @@
 			path = "Sample Classes/ColumnTableView";
 			sourceTree = "<group>";
 		};
+		A6E8C1B21404091B00C00910 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A6E8C1BB1404091B00C00910 /* libCWFoundation.a */,
+				A6E8C1BD1404091B00C00910 /* libCWNetworkMonitor.a */,
+				A6E8C1BF1404091B00C00910 /* UnitTests.octest */,
+				A6E8C1C11404091B00C00910 /* NetworkMonitorSampleApp.app */,
+				A6E8C1C31404091B00C00910 /* XMLTranslatorSampleApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		A6ED90171369470A002DCEE4 /* Test Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -480,18 +509,6 @@
 				A6ED92AC13695A2A002DCEE4 /* CalloutView */,
 			);
 			name = "Sample Classes";
-			sourceTree = "<group>";
-		};
-		A6ED927A136959A8002DCEE4 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A6ED9282136959A8002DCEE4 /* libCWFoundation.a */,
-				A6108430136ED42300D42782 /* libCWNetworkMonitor.a */,
-				A6ED9284136959A8002DCEE4 /* UnitTests.octest */,
-				A6A973151369B7150065D9BE /* NetworkMonitorSampleApp.app */,
-				A6A973171369B7150065D9BE /* XMLTranslatorSampleApp.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		A6ED92AC13695A2A002DCEE4 /* CalloutView */ = {
@@ -650,8 +667,9 @@
 			buildRules = (
 			);
 			dependencies = (
-				A6ED9287136959BB002DCEE4 /* PBXTargetDependency */,
+				A6E8C1C5140409AA00C00910 /* PBXTargetDependency */,
 				A6ED92FC13695C69002DCEE4 /* PBXTargetDependency */,
+				A6E879061404102800DFABA1 /* PBXTargetDependency */,
 			);
 			name = CWUIKit;
 			productName = CWUIKit;
@@ -663,8 +681,11 @@
 /* Begin PBXProject section */
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0410;
+			};
 			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "CWUIKit" */;
-			compatibilityVersion = "Xcode 3.1";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -678,12 +699,13 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = A6ED927A136959A8002DCEE4 /* Products */;
+					ProductGroup = A6E8C1B21404091B00C00910 /* Products */;
 					ProjectRef = A6ED9279136959A8002DCEE4 /* CWFoundation.xcodeproj */;
 				},
 			);
 			projectRoot = "";
 			targets = (
+				A6E8C1A81404087C00C00910 /* CWUIKitEnsureDeps */,
 				A6ED92EC13695BD3002DCEE4 /* CWUIKitResources */,
 				D2AAC07D0554694100DB518D /* CWUIKit */,
 				A6ED92B813695A43002DCEE4 /* CalloutViewSampleApp */,
@@ -694,39 +716,39 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		A6108430136ED42300D42782 /* libCWNetworkMonitor.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libCWNetworkMonitor.a;
-			remoteRef = A610842F136ED42300D42782 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A6A973151369B7150065D9BE /* NetworkMonitorSampleApp.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = NetworkMonitorSampleApp.app;
-			remoteRef = A6A973141369B7150065D9BE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A6A973171369B7150065D9BE /* XMLTranslatorSampleApp.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = XMLTranslatorSampleApp.app;
-			remoteRef = A6A973161369B7150065D9BE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A6ED9282136959A8002DCEE4 /* libCWFoundation.a */ = {
+		A6E8C1BB1404091B00C00910 /* libCWFoundation.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libCWFoundation.a;
-			remoteRef = A6ED9281136959A8002DCEE4 /* PBXContainerItemProxy */;
+			remoteRef = A6E8C1BA1404091B00C00910 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		A6ED9284136959A8002DCEE4 /* UnitTests.octest */ = {
+		A6E8C1BD1404091B00C00910 /* libCWNetworkMonitor.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libCWNetworkMonitor.a;
+			remoteRef = A6E8C1BC1404091B00C00910 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A6E8C1BF1404091B00C00910 /* UnitTests.octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = UnitTests.octest;
-			remoteRef = A6ED9283136959A8002DCEE4 /* PBXContainerItemProxy */;
+			remoteRef = A6E8C1BE1404091B00C00910 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A6E8C1C11404091B00C00910 /* NetworkMonitorSampleApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = NetworkMonitorSampleApp.app;
+			remoteRef = A6E8C1C01404091B00C00910 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A6E8C1C31404091B00C00910 /* XMLTranslatorSampleApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = XMLTranslatorSampleApp.app;
+			remoteRef = A6E8C1C21404091B00C00910 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -781,6 +803,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A6E8C1AC140408C500C00910 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "ruby Scripts/ensdep.rb git@github.com:jayway/CWFoundation.git";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A69186AD13E1B464006F25AD /* Sources */ = {
@@ -856,10 +894,15 @@
 			target = D2AAC07D0554694100DB518D /* CWUIKit */;
 			targetProxy = A6DAA6E81383E51700518CC8 /* PBXContainerItemProxy */;
 		};
-		A6ED9287136959BB002DCEE4 /* PBXTargetDependency */ = {
+		A6E879061404102800DFABA1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CWFoundation;
-			targetProxy = A6ED9286136959BB002DCEE4 /* PBXContainerItemProxy */;
+			targetProxy = A6E879051404102800DFABA1 /* PBXContainerItemProxy */;
+		};
+		A6E8C1C5140409AA00C00910 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A6E8C1A81404087C00C00910 /* CWUIKitEnsureDeps */;
+			targetProxy = A6E8C1C4140409AA00C00910 /* PBXContainerItemProxy */;
 		};
 		A6ED92C313695A85002DCEE4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -882,7 +925,6 @@
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/CWUIKit.dst;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -910,15 +952,16 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
 				);
-				PREBINDING = NO;
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
-				USER_HEADER_SEARCH_PATHS = "Components/**";
+				USER_HEADER_SEARCH_PATHS = "../**";
 			};
 			name = Debug;
 		};
@@ -927,15 +970,16 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
 				);
-				PREBINDING = NO;
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
-				USER_HEADER_SEARCH_PATHS = "Components/**";
+				USER_HEADER_SEARCH_PATHS = "../**";
 			};
 			name = Release;
 		};
@@ -958,7 +1002,6 @@
 					"-framework",
 					UIKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = CalendarViewSheetSampleApp;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -972,7 +1015,6 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
 				INFOPLIST_FILE = "CalloutViewSampleApp-Info copy.plist";
@@ -984,7 +1026,6 @@
 					"-framework",
 					UIKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = CalloutViewSampleApp;
 				SDKROOT = iphoneos;
 				ZERO_LINK = NO;
@@ -1009,7 +1050,6 @@
 					"-framework",
 					UIKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = ColumnTableViewSampleApp;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1023,7 +1063,6 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
 				INFOPLIST_FILE = "Sample Classes/ColumnTableView/ColumnTableViewSampleApp-Info.plist";
@@ -1034,11 +1073,24 @@
 					"-framework",
 					UIKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = ColumnTableViewSampleApp;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		A6E8C1AA1404087C00C00910 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A6E8C1AB1404087C00C00910 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -1061,7 +1113,6 @@
 					"-framework",
 					UIKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = CalloutViewSampleApp;
 				SDKROOT = iphoneos;
 			};
@@ -1074,7 +1125,6 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
 				INFOPLIST_FILE = "Sample Classes/CalloutView/CalloutViewSampleApp-Info.plist";
@@ -1086,7 +1136,6 @@
 					"-framework",
 					UIKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = CalloutViewSampleApp;
 				SDKROOT = iphoneos;
 				ZERO_LINK = NO;
@@ -1098,7 +1147,6 @@
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1112,7 +1160,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
@@ -1157,6 +1204,15 @@
 			buildConfigurations = (
 				A6DAA6C11383E41000518CC8 /* Debug */,
 				A6DAA6C21383E41000518CC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A6E8C1A91404087C00C00910 /* Build configuration list for PBXAggregateTarget "CWUIKitEnsureDeps" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6E8C1AA1404087C00C00910 /* Debug */,
+				A6E8C1AB1404087C00C00910 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

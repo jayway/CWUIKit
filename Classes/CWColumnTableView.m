@@ -325,8 +325,8 @@
             if (_columnTableViewFlags.delegateHasWillDisplayCell) {
                 [self.delegate columnTableView:self willDisplayCell:cell forPositionAtIndex:position];
             }
-            cell.backgroundView;
-            cell.selectedBackgroundView;
+            (void)cell.backgroundView;
+            (void)cell.selectedBackgroundView;
             [cell setSelected:position == _selectedIndex];
             NSInteger actualVisualPosition = [self actualVisualPositionForPosition:position];
             CGRect frame = [self rectForPositionAtIndex:actualVisualPosition];
