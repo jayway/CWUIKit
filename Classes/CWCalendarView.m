@@ -605,15 +605,15 @@ CWStaticColor(dimmedInvalidTextColor, [UIColor colorWithRed:0.63f green:0.59f bl
         if (location.x < 50 && [self canGotoPreviousMonth]) {
             NSDateComponents* components = [[[NSDateComponents alloc] init] autorelease];
             [components setMonth:-1];
-            self.currentMonthDate = [[self.calendar dateByAddingComponents:components 
-                                                                    toDate:self.currentMonthDate 
-                                                                   options:0] retain];
+            self.currentMonthDate = [self.calendar dateByAddingComponents:components 
+                                                                   toDate:self.currentMonthDate 
+                                                                  options:0];
         } else if (location.x > 270 && [self canGotoNextMonth]) {
             NSDateComponents* components = [[[NSDateComponents alloc] init] autorelease];
             [components setMonth:1];
-            self.currentMonthDate = [[self.calendar dateByAddingComponents:components 
-                                                                    toDate:self.currentMonthDate 
-                                                                   options:0] retain];
+            self.currentMonthDate = [self.calendar dateByAddingComponents:components 
+                                                                   toDate:self.currentMonthDate 
+                                                                  options:0];
         }
     } else {
         location.y -= 44;
