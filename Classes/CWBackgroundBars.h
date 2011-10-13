@@ -40,7 +40,7 @@ Deprecation warning:
 
 @interface CWBackgroundNavigationBar : UINavigationBar {
 @private
-    UIImageView* _obsoluteBackgroundView;
+    UIView* _obsoluteBackgroundView;
     BOOL _hiddenBackgroundImage;
 }
 
@@ -53,7 +53,7 @@ Deprecation warning:
 
 @interface CWBackgroundToolbar : UIToolbar {
 @private
-    UIImageView* _obsoluteBackgroundView;
+    UIView* _obsoluteBackgroundView;
     BOOL _hiddenBackgroundImage;
 }
 
