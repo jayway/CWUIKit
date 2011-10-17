@@ -49,7 +49,9 @@ only describes a subset of the main funcationality.
 * CWColumnTableView - Like UITableView with multiple columns
 * CWTableViewBackgroundCell - Configurabe background and highlight for cells.
 * CWLinearLayout - Rule based linear layout, when springs&struts comes short.
-* CWNibLocalization - Prefix text with @ in IB gets localized from strings.
+* CWNibLocalization - Prefix text with @ in IB gets localized from strings. To
+   use, you will have to call [self.view localizeFromNib]; from viewDidLoad in
+   your view controllers.
 * CWViewSheet - A helper class for presenting views like a sheet.
 * UIAlertView - Conviniece additions to construct from NSError instances.
 * UIColor - Additions for extracting components, and accessing standard colors.

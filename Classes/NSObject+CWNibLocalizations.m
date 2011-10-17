@@ -80,8 +80,7 @@
     }
 }
 
--(void)awakeFromNib;
-{
+-(void)performLocalization {
 	if ([self respondsToSelector:@selector(text)]) {
         [self localizeValueForKey:@"text"];
     } else if ([self respondsToSelector:@selector(title)]) {
@@ -93,6 +92,23 @@
     }
     if ([self respondsToSelector:@selector(placeholder)]) {
         [self localizeValueForKey:@"placeholder"];
+    }
+}
+
+-(void)awakeFromNib;
+{
+    [self performLocalization];
+}
+
+-(void)localizeFromNib {
+    [self performLocalization];
+    
+    if ([self isKindOfClass:[UIView class]]) {
+        UIView* uiView = (UIView*)self;
+
+        for(UIView* view in uiView.subviews) {
+            [view localizeFromNib];
+        }
     }
 }
 

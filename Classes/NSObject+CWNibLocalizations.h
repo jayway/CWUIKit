@@ -34,5 +34,6 @@
 @interface NSObject (CWNIBLocalizations)
 
 -(void)awakeFromNib;
+-(void)localizeFromNib;
 
 @end
