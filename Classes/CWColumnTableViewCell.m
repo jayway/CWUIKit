@@ -153,7 +153,7 @@
 
 -(void)setupDefaultValues;
 {
-    _contentView = [[[UIView alloc] initWithFrame:self.frame] autorelease];
+    _contentView = [[UIView alloc] initWithFrame:self.frame];
     _contentView.backgroundColor = [UIColor clearColor];
     _contentView.opaque = NO;
     _contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
