@@ -81,12 +81,15 @@
 }
 
 -(void)performLocalization {
-	if ([self respondsToSelector:@selector(text)]) {
+    // UIButton responds to title, seems to be private attribute.
+    // Therefore its comparison call is at the top.
+    
+    if ([self isKindOfClass:[UIButton class]]) {
+    	[self localizeButton];
+    } else if ([self respondsToSelector:@selector(text)]) {
         [self localizeValueForKey:@"text"];
     } else if ([self respondsToSelector:@selector(title)]) {
         [self localizeValueForKey:@"title"];
-    } else if ([self isKindOfClass:[UIButton class]]) {
-    	[self localizeButton];
     } else if ([self isKindOfClass:[UISegmentedControl class]]) {
     	[self localizeSegmentedControl];
     }
