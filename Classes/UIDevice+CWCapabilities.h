@@ -60,4 +60,10 @@
  */
 +(BOOL)isMultitaskingCapable;
 
+/*!
+* @abstract Ask if the current devive is iOS5 or higher.
+*
+*/
++(BOOL)isiOS5orGreater;
+
 @end

@@ -77,4 +77,15 @@ typedef enum {
     }
     return v == CWCapabilityStateYes;
 }
+
++(BOOL)isiOS5orGreater;
+{
+    id class = NSClassFromString(@"UIPageViewController");
+    if (class){
+        return YES;
+    } else{
+        return NO;
+    }
+}
+
 @end
