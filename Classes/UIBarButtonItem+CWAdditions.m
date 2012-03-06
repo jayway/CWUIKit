@@ -96,8 +96,8 @@
                                      target:target
                                      action:action];
     } else {
-        static UIImage* backgroundImage = nil;
-        static UIImage* highlightedBackgroundImage = nil;
+        UIImage* backgroundImage = nil;
+        UIImage* highlightedBackgroundImage = nil;
      	if (backgroundImage == nil) {
             backgroundImage = [[UIImage imageNamed:@"CWUIKitResources.bundle/bar_button.png"] stretchableImageWithLeftCapWidth:15
                                                                                                            topCapHeight:15];
