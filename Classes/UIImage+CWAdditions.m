@@ -213,6 +213,7 @@
     [self drawAtPoint:CGPointMake(-rect.origin.x, -rect.origin.y)];
     UIImage* image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
+    CGContextRelease(UIGraphicsGetCurrentContext());
     return image;
 }
 
