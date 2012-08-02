@@ -302,7 +302,7 @@
 -(CWColumnTableViewCell*)cellForPositionAtIndex:(NSInteger)position;
 {
 	if (position < 0 || position >= [self numberOfPositions]) {
-    	[NSException raise:NSInvalidArgumentException format:@"Position %d ouside of range 0..%d", [self numberOfPositions] - 1];
+    	[NSException raise:NSInvalidArgumentException format:@"Position %d ouside of range 0..%d", position, [self numberOfPositions] - 1];
     } else {
         if (position == _sourceIndexForMove && _cellBeingMoved != nil) {
         	return _cellBeingMoved;
@@ -604,7 +604,7 @@
             NSTimeInterval triggerDelay = [self isEditing] ? 0.2 : 1.0;
             [self performSelector:@selector(beginMovingPosition) withObject:nil afterDelay:triggerDelay];
         }
-        if (_columnTableViewFlags.delegateHasWillSelectPosition) {
+        if (position != NSNotFound && _columnTableViewFlags.delegateHasWillSelectPosition) {
             position = [self.delegate columnTableView:self willSelectPositionAtIndex:position]; 
         }
         [self setHighlighted:YES forPositionAtIndex:position];
