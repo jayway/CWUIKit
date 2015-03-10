@@ -47,11 +47,11 @@
 
 @synthesize parentViewController, containerPopoverController, visiblePopoverControllers;
 
--(id)init;
+-(instancetype)init;
 {
 	self = [super init];
     if (self) {
-    	self.visiblePopoverControllers = [NSMutableSet setWithCapacity:4];
+    	//self.visiblePopoverControllers = [NSMutableSet setWithCapacity:4];
     }
     return self;
 }
@@ -78,10 +78,10 @@ static NSMutableDictionary* popoverHelpers = nil;
     if (popoverHelpers == nil) {
     	popoverHelpers = [[NSMutableDictionary alloc] initWithCapacity:16];
     }
-	CWViewControllerPopoverHelper* helper = [popoverHelpers objectForKey:key];
+	CWViewControllerPopoverHelper* helper = popoverHelpers[key];
     if (helper == nil) {
         helper = [[[CWViewControllerPopoverHelper alloc] init] autorelease];
-		[popoverHelpers setObject:helper forKey:key];
+		popoverHelpers[key] = helper;
     }
     return helper;
 }

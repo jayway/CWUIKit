@@ -36,7 +36,7 @@
 	NSArray* _actions;
 }
 
--(id)initWithAuxiliaryActions:(NSArray*)actions;
+-(instancetype)initWithAuxiliaryActions:(NSArray*)actions;
 
 @end
 
@@ -91,7 +91,7 @@ static void* dismissKey = "dismissHandlerKey";
 
 @implementation CWAlertViewAuxiliaryActionsDelegate
 
--(id)initWithAuxiliaryActions:(NSArray*)actions;
+-(instancetype)initWithAuxiliaryActions:(NSArray*)actions;
 {
 	self = [self init];
     if (self) {

@@ -65,7 +65,7 @@
  * @discussion Title is optional, if available it will be displayed in a black
  *             bar above the content view in the sheet.
  */
--(id)initWithContentView:(UIView*)view title:(NSString*)title;
+-(instancetype)initWithContentView:(UIView*)view title:(NSString*)title;
 
 /*!
  * @abstract Displey the sheet originating in a view.

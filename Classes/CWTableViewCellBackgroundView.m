@@ -140,7 +140,7 @@ UIRectCorner CWRectCornerFromRectEdge(CWRectEdge edge) {
 	return view;
 }
 
--(id)initWithTableViewStyle:(UITableViewStyle)tableViewStyle separatorStyle:(UITableViewCellSeparatorStyle)separatorStyle;
+-(instancetype)initWithTableViewStyle:(UITableViewStyle)tableViewStyle separatorStyle:(UITableViewCellSeparatorStyle)separatorStyle;
 {
 	self = [super initWithFrame:CGRectMake(0, 0, 320, 44)];
     if (self) {
@@ -163,7 +163,7 @@ UIRectCorner CWRectCornerFromRectEdge(CWRectEdge edge) {
     [path addClip];
     if (_bottomGradientColor) {
         CGColorSpaceRef space = CGColorSpaceCreateDeviceRGB();
-		CGGradientRef gradient = CGGradientCreateWithColors(space, (CFArrayRef)[NSArray arrayWithObjects:(id)_topGradientColor.CGColor, (id)_bottomGradientColor.CGColor, nil], (CGFloat[]){0.0f, 1.0f});
+		CGGradientRef gradient = CGGradientCreateWithColors(space, (CFArrayRef)@[(id)_topGradientColor.CGColor, (id)_bottomGradientColor.CGColor], (CGFloat[]){0.0f, 1.0f});
         CGContextDrawLinearGradient(c, gradient, rect.origin, CGPointMake(rect.origin.x, rect.origin.y + rect.size.height), kCGGradientDrawsBeforeStartLocation | kCGGradientDrawsAfterEndLocation);
 		CGGradientRelease(gradient);
 		CGColorSpaceRelease(space);

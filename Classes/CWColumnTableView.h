@@ -259,7 +259,7 @@
 /*!
  * @abstract The designated initializer.
  */
--(id)initWithFrame:(CGRect)frame style:(UITableViewStyle)style;
+-(instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style NS_DESIGNATED_INITIALIZER;
 
 /*!
  * @abstract Return the position index for a cell, or NSNotFound if not currently visible.
@@ -274,7 +274,7 @@
 /*!
  * @abstract Return the number of positions.
  */
--(NSInteger)numberOfPositions;
+@property (NS_NONATOMIC_IOSONLY, readonly) NSInteger numberOfPositions;
 
 /*!
  * @abstract Return the cell for a position index, or nil if position index is not visible.
@@ -290,7 +290,7 @@
 /*!
  * @abstract Return the position index of the selection position, or NSNotFound if no selection.
  */
--(NSInteger)indexOfSelectedPosition;
+@property (NS_NONATOMIC_IOSONLY, readonly) NSInteger indexOfSelectedPosition;
 
 /*!
  * @abstract Select position at index.
@@ -344,7 +344,7 @@
 /*!
  * @abstract Return an array with all currently visible cells.
  */
--(NSArray*)visibleCells;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSArray *visibleCells;
 
 /*!
  * @abstract Invalidate all data, and reload from data source.
@@ -358,7 +358,7 @@
  *             in a subclass of CWColumnTableView.
  *             Use to determine if new layout is needed for sub-classes with complex view hiarchies.
  */
--(BOOL)didPerformLayoutSubviews;
+@property (NS_NONATOMIC_IOSONLY, readonly) BOOL didPerformLayoutSubviews;
 
 @end
 

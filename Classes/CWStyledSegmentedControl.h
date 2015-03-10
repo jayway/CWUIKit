@@ -40,7 +40,7 @@
 
 @property(nonatomic, assign) NSInteger selectedSegmentIndex;
 
--(id)initWithItems:(NSArray*)items stretchableBackgroundImage:(UIImage*)backgroundImage stretchableSelectedBackgroundImage:(UIImage*)selectedBackgroundImage stretchableDividerImage:(UIImage*)image;
+-(instancetype)initWithItems:(NSArray*)items stretchableBackgroundImage:(UIImage*)backgroundImage stretchableSelectedBackgroundImage:(UIImage*)selectedBackgroundImage stretchableDividerImage:(UIImage*)image NS_DESIGNATED_INITIALIZER;
 
 -(void)setTitleFont:(UIFont*)font;
 -(void)setTitleShadowOffset:(CGSize)offset;

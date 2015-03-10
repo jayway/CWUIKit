@@ -70,7 +70,7 @@
         UIBarButtonItem* doneItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismiss)] autorelease];
         UIBarButtonItem* spaceItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:NULL] autorelease];
         spaceItem.width = 30;
-        NSArray* items = [NSArray arrayWithObjects:spaceItem, flexItem, titleItem, flexItem, doneItem, nil];
+        NSArray* items = @[spaceItem, flexItem, titleItem, flexItem, doneItem];
         CGRect toolbarFrame = contentFrame;
         toolbarFrame.origin.y = 0;
         toolbarFrame.size.height = 44;
@@ -106,7 +106,7 @@
     popoverController.delegate = self;
 }
 
--(id)initWithContentView:(UIView*)view title:(NSString*)title;
+-(instancetype)initWithContentView:(UIView*)view title:(NSString*)title;
 {
     iPhoneIdiom = [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone;
     CGRect frame = iPhoneIdiom ? [[UIScreen mainScreen] applicationFrame] : view.bounds;

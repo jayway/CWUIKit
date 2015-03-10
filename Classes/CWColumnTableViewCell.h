@@ -77,7 +77,7 @@
 @property (nonatomic, getter=isHighlighted, assign) BOOL highlighted;
 @property (nonatomic, getter=isEditing, assign) BOOL editing;
 
--(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString*)reuseIdentifier;
+-(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString*)reuseIdentifier;
 
 -(void)setSelected:(BOOL)selected animated:(BOOL)animated;
 -(void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated;
@@ -90,8 +90,8 @@
 
 @interface CWColumnTableViewCell (CWSubviewOverrides)
 
--(UIColor*)textLabelTextColor;
--(UIColor*)detailTextLabelTextColor;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) UIColor *textLabelTextColor;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) UIColor *detailTextLabelTextColor;
 
 -(UILabel*)defaultTextLabel;
 -(UIImageView*)defaultImageView;
@@ -102,10 +102,10 @@
 @interface CWColumnTableViewCell (CWLayoutOverrides)
 
 -(CGRect)rectForMainTextLabel:(BOOL)isMainTextLabel;
--(CGRect)rectForTextLabel;
--(CGRect)rectForImageView;
--(CGRect)rectForDetailTextLabel;
--(CGRect)rectForContentView;
--(CGRect)rectForAccessoryView;
+@property (NS_NONATOMIC_IOSONLY, readonly) CGRect rectForTextLabel;
+@property (NS_NONATOMIC_IOSONLY, readonly) CGRect rectForImageView;
+@property (NS_NONATOMIC_IOSONLY, readonly) CGRect rectForDetailTextLabel;
+@property (NS_NONATOMIC_IOSONLY, readonly) CGRect rectForContentView;
+@property (NS_NONATOMIC_IOSONLY, readonly) CGRect rectForAccessoryView;
 
 @end

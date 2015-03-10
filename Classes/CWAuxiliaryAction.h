@@ -44,9 +44,9 @@ typedef void (^CWAuxiliaryActionHandler)(CWAuxiliaryAction*);
 @property (nonatomic, copy, readonly) CWAuxiliaryActionHandler handler;
 @property (nonatomic, assign) NSInteger tag;
 
-+(id)actionWithTitle:(NSString*)title handler:(CWAuxiliaryActionHandler)handler;
-+(id)actionWithTitle:(NSString*)title handler:(CWAuxiliaryActionHandler)handler tag:(NSInteger)tag;
--(id)initWithLocalizedTitle:(NSString*)title handler:(CWAuxiliaryActionHandler)handler;
++(instancetype)actionWithTitle:(NSString*)title handler:(CWAuxiliaryActionHandler)handler;
++(instancetype)actionWithTitle:(NSString*)title handler:(CWAuxiliaryActionHandler)handler tag:(NSInteger)tag;
+-(instancetype)initWithLocalizedTitle:(NSString*)title handler:(CWAuxiliaryActionHandler)handler;
 
 @end
 

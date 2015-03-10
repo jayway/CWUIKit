@@ -120,7 +120,7 @@ static CGRect gToRect;
     // Create a keyframe animation.
     CAKeyframeAnimation* keyFrame = [CAKeyframeAnimation animationWithKeyPath:@"position"];
     keyFrame.path = ballisticPath;
-    keyFrame.keyTimes = [NSArray arrayWithObjects:[NSNumber numberWithFloat:0.0f], [NSNumber numberWithFloat:1.0f], nil];
+    keyFrame.keyTimes = @[@0.0f, @1.0f];
     keyFrame.duration = duration;
     keyFrame.calculationMode = kCAAnimationLinear;
 //    keyFrame.delegate = self;

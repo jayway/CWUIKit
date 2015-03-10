@@ -31,11 +31,11 @@
 #import "UIDevice+CWCapabilities.h"
 #import <QuartzCore/QuartzCore.h>
 
-typedef enum {
+typedef NS_ENUM(NSInteger, CWCapabilityState) {
 	CWCapabilityStateUnknown = 0,
     CWCapabilityStateNo = 1,
     CWCapabilityStateYes = 2
-} CWCapabilityState;
+} ;
 
 @implementation UIDevice (CWCapabilities)
 

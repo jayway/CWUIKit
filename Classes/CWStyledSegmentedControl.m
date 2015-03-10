@@ -43,18 +43,18 @@
 {
 	if (index != _selectedSegmentIndex) {
     	if (_selectedSegmentIndex != NSNotFound) {
-        	[[_buttons objectAtIndex:_selectedSegmentIndex] setSelected:NO];
+        	[_buttons[_selectedSegmentIndex] setSelected:NO];
         }
         _selectedSegmentIndex = index;
     	if (_selectedSegmentIndex != NSNotFound) {
-        	[[_buttons objectAtIndex:_selectedSegmentIndex] setSelected:YES];
+        	[_buttons[_selectedSegmentIndex] setSelected:YES];
         }
         [self sendActionsForControlEvents:UIControlEventValueChanged];
     }
 }
 
 
--(id)initWithItems:(NSArray*)items stretchableBackgroundImage:(UIImage*)backgroundImage stretchableSelectedBackgroundImage:(UIImage*)selectedBackgroundImage stretchableDividerImage:(UIImage*)dividerImage;
+-(instancetype)initWithItems:(NSArray*)items stretchableBackgroundImage:(UIImage*)backgroundImage stretchableSelectedBackgroundImage:(UIImage*)selectedBackgroundImage stretchableDividerImage:(UIImage*)dividerImage;
 {    
     self = [super initWithFrame:CGRectMake(0, 0, 320, 44)];
     if (self) {
@@ -71,7 +71,7 @@
                        action:@selector(touchUpInsideForButton:)
              forControlEvents:UIControlEventTouchUpInside];
             button.tag = buttonIndex;
-            id item = [items objectAtIndex:buttonIndex];
+            id item = items[buttonIndex];
             if ([item isKindOfClass:[UIImage class]]) {
             	[button setImage:item forState:UIControlStateNormal];
             } else {
@@ -134,7 +134,7 @@
 
 -(void)setReversesTitleShadowWhenHighlighted:(BOOL)reverses;
 {
-	[_buttons setValue:[NSNumber numberWithBool:reverses] forKey:@"reversesTitleShadowWhenHighlighted"];   
+	[_buttons setValue:@(reverses) forKey:@"reversesTitleShadowWhenHighlighted"];   
 }
 
 -(void)setTitleColor:(UIColor*)color forState:(UIControlState)state;
@@ -169,7 +169,7 @@
     }
     CGSize totalSize = CGSizeMake(maxSize.width * [_buttons count], maxSize.height);
     if ([_dividers count] > 0) {
-    	UIImageView* divider = [_dividers objectAtIndex:0];
+    	UIImageView* divider = _dividers[0];
         CGSize s = [divider sizeThatFits:size];
         totalSize.width += MAX(1, s.width) * [_dividers count];
         totalSize.height = MAX(totalSize.height, s.height);
@@ -187,7 +187,7 @@
     CGFloat leftOffset = 0;
     CGFloat dividerWith = 0;
     if ([_dividers count] > 0) {
-    	dividerWith = MAX(1, [[_dividers objectAtIndex:0] sizeThatFits:bounds.size].width);
+    	dividerWith = MAX(1, [_dividers[0] sizeThatFits:bounds.size].width);
         widthLeft -= dividerWith * [_dividers count];
     }
     NSInteger buttonCount = [_buttons count];
@@ -200,11 +200,11 @@
                                   bounds.size.height);
         leftOffset += frame.size.width;
         widthLeft -= frame.size.width;
-        [[_buttons objectAtIndex:buttonIndex] setFrame:frame];
+        [_buttons[buttonIndex] setFrame:frame];
         if (!isLast) {
         	frame = CGRectMake(leftOffset, 0, dividerWith, bounds.size.height);
             leftOffset += dividerWith;
-            [[_dividers objectAtIndex:buttonIndex] setFrame:frame];
+            [_dividers[buttonIndex] setFrame:frame];
         }
     }
 }

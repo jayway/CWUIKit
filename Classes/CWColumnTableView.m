@@ -42,8 +42,8 @@
 
 -(CGRect)rectForPositionAtIndex:(NSInteger)position;
 
--(NSInteger)firstVisiblePosition;
--(NSInteger)lastVisiblePosition;
+@property (NS_NONATOMIC_IOSONLY, readonly) NSInteger firstVisiblePosition;
+@property (NS_NONATOMIC_IOSONLY, readonly) NSInteger lastVisiblePosition;
 -(void)updateInternalCellCaches;
 -(void)offerCellToReuseQueue:(CWColumnTableViewCell*)cell;
 
@@ -205,7 +205,7 @@
     _destIndexForMove = NSNotFound;
 }
 
--(id)initWithFrame:(CGRect)frame style:(UITableViewStyle)style;
+-(instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style;
 {
 	self = [super initWithFrame:frame];
     if (self) {
@@ -215,7 +215,7 @@
     return self;
 }
 
--(id)initWithCoder:(NSCoder *)aDecoder;
+-(instancetype)initWithCoder:(NSCoder *)aDecoder;
 {
 	self = [super initWithCoder:aDecoder];
     if (self) {
@@ -290,7 +290,7 @@
 		_backgroundRowViews = [[NSMutableArray alloc] initWithCapacity:2];
 	}
 	if (rowIndex < [_backgroundRowViews count]) {
-		return [_backgroundRowViews objectAtIndex:rowIndex];
+		return _backgroundRowViews[rowIndex];
 	} else if (_columnTableViewFlags.delegateHasBackgroundForRow) {
 		UIView* rowBackgroundView = [self.delegate columnTableView:self backgroundViewForRowAtIndex:rowIndex];
 		[_backgroundRowViews insertObject:rowBackgroundView atIndex:rowIndex];
@@ -312,7 +312,7 @@
         if (lookupIndex >= 0 && lookupIndex < [_visibleCells count]) {
             BOOL isNewCell = [_indexesToInsertedAnimatedAtLayout containsIndex:position];
             BOOL animationsEnabled = [UIView areAnimationsEnabled];
-        	CWColumnTableViewCell* cell = [_visibleCells objectAtIndex:lookupIndex];
+        	CWColumnTableViewCell* cell = _visibleCells[lookupIndex];
             [UIView setAnimationsEnabled:NO];
             if ([cell isKindOfClass:[NSNull class]]) {
             	cell = [self.dataSource columnTableView:self cellForPositionAtIndex:position];
@@ -320,7 +320,7 @@
                 cell.separatorColor = self.separatorColor;
                 cell.separatorStyle = self.separatorStyle;
                 [cell setEditing:[self isEditing] animated:NO];
-                [_visibleCells replaceObjectAtIndex:lookupIndex withObject:cell];
+                _visibleCells[lookupIndex] = cell;
             }
             if (_columnTableViewFlags.delegateHasWillDisplayCell) {
                 [self.delegate columnTableView:self willDisplayCell:cell forPositionAtIndex:position];
@@ -349,7 +349,7 @@
 
 -(CWColumnTableViewCell*)dequeueReusableCellWithIdentifier:(NSString*)identifier;
 {
-	NSMutableArray* cellsForIdentifier = [_resuseableCells objectForKey:identifier];
+	NSMutableArray* cellsForIdentifier = _resuseableCells[identifier];
     id cell = [cellsForIdentifier lastObject];
     if (cell) {
     	[[cell retain] autorelease];
@@ -509,7 +509,7 @@
 	}
 	
 	for (int index = minNumberOfRows; index < [_backgroundRowViews count]; index++) {
-		[[_backgroundRowViews objectAtIndex:index] removeFromSuperview];
+		[_backgroundRowViews[index] removeFromSuperview];
 	}
 	
     BOOL shouldDoLayout = _cellBeingMoved != nil || firstVisiblePosition != _lastFirstVisiblePosition || lastVisiblePosition != _lastLastVisiblePosition || !CGSizeEqualToSize(_lastSize, size);
@@ -840,7 +840,7 @@
 	        if (index < _firstVisibleCell) {
                 _firstVisibleCell--;
             } else if (index <= _lastVisibleCell) {
-                CWColumnTableViewCell* cell = [_visibleCells objectAtIndex:index - _firstVisibleCell];
+                CWColumnTableViewCell* cell = _visibleCells[index - _firstVisibleCell];
                 if (animated) {
                     cell.alpha = 0.0;
                 	cell.transform = CGAffineTransformMakeScale(0.1f, 0.1f);
@@ -880,9 +880,9 @@
 	if (_firstVisibleCell != NSNotFound && _lastVisibleCell != NSNotFound) {
         for (NSUInteger index = [indexes firstIndex]; index != NSNotFound; index = [indexes indexGreaterThanIndex:index]) {
             if (index >= _firstVisibleCell && index <= _lastVisibleCell) {
-                CWColumnTableViewCell* cell = [_visibleCells objectAtIndex:index - _firstVisibleCell];
+                CWColumnTableViewCell* cell = _visibleCells[index - _firstVisibleCell];
                 [self offerCellToReuseQueue:cell];
-				[_visibleCells replaceObjectAtIndex:index - _firstVisibleCell withObject:[NSNull null]];
+				_visibleCells[index - _firstVisibleCell] = [NSNull null];
             }
         }
         if (_updateCount == 0) {
@@ -997,7 +997,7 @@
 		}
 		if (firstVisibleCell > _firstVisibleCell) {
 			for (int i = 0; i < (firstVisibleCell - _firstVisibleCell); i++) {
-				[self offerCellToReuseQueue:[_visibleCells objectAtIndex:0]];
+				[self offerCellToReuseQueue:_visibleCells[0]];
 				[_visibleCells removeObjectAtIndex:0];
 			}
 			_firstVisibleCell = firstVisibleCell;
@@ -1033,7 +1033,7 @@
     // This is needed because _visibleCells has NSNull for unfetched cells.
     if ([cell isKindOfClass:[CWColumnTableViewCell class]]) {
         if (cell.reuseIdentifier) {
-			NSMutableArray* cellsForIdentifier = [_resuseableCells objectForKey:cell.reuseIdentifier];
+			NSMutableArray* cellsForIdentifier = _resuseableCells[cell.reuseIdentifier];
 			if (!cellsForIdentifier) {
 				cellsForIdentifier = [[[NSMutableArray alloc] initWithCapacity:self.numberOfColumns] autorelease];
 			}
@@ -1041,7 +1041,7 @@
 			if ([cellsForIdentifier count] < maxCells) {
 				[cellsForIdentifier addObject:cell];
 			}
-            [_resuseableCells setObject:cellsForIdentifier forKey:cell.reuseIdentifier];        
+            _resuseableCells[cell.reuseIdentifier] = cellsForIdentifier;        
         }
         [cell removeFromSuperview];
     }

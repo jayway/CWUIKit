@@ -31,13 +31,13 @@
 
 #import <UIKit/UIKit.h>
 
-typedef enum {
+typedef NS_OPTIONS(NSUInteger, CWRectEdge) {
 	CWRectEdgeTop = 1 << 0,
 	CWRectEdgeBottom = 1 << 1,
 	CWRectEdgeLeft = 1 << 2,
 	CWRectEdgeRight = 1 << 3,
     CWRectEdgeAllEdges = ~0
-} CWRectEdge;
+} ;
 
 UIRectCorner CWRectCornerFromRectEdge(CWRectEdge edge);
 
@@ -74,6 +74,6 @@ UIRectCorner CWRectCornerFromRectEdge(CWRectEdge edge);
 +(CWTableViewCellBackgroundView*)backgroundViewWithTableViewStyle:(UITableViewStyle)tableViewStyle separatorStyle:(UITableViewCellSeparatorStyle)separatorStyle;
 +(CWTableViewCellBackgroundView*)highlightedBackgroundViewWithTableViewStyle:(UITableViewStyle)tableViewStyle separatorStyle:(UITableViewCellSeparatorStyle)separatorStyle;
 
--(id)initWithTableViewStyle:(UITableViewStyle)tableViewStyle separatorStyle:(UITableViewCellSeparatorStyle)separatorStyle;
+-(instancetype)initWithTableViewStyle:(UITableViewStyle)tableViewStyle separatorStyle:(UITableViewCellSeparatorStyle)separatorStyle NS_DESIGNATED_INITIALIZER;
 
 @end

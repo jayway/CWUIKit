@@ -41,7 +41,7 @@
  * @abstract An unordered set of UIViewControlelrs currently being shown as
  *           popovers from the receiver.
  */
-@property (nonatomic, retain, readonly) NSSet* visiblePopoverControllers;
+//@property (nonatomic, retain, readonly) NSSet* visiblePopoverControllers;
 
 /*!
  * @abstract Present a popover view managed by the given view controller to the user.

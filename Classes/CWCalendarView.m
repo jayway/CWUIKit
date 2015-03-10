@@ -126,12 +126,12 @@
     [self addGestureRecognizer:tap];
 }
 
--(id)init;
+-(instancetype)init;
 {
     return [self initWithFrame:CGRectMake(0, 0, 320, 308)];
 }
 
-- (id)initWithFrame:(CGRect)frame
+- (instancetype)initWithFrame:(CGRect)frame
 {
     frame.size = CGSizeMake(320, 44 * 7);
     self = [super initWithFrame:frame];
@@ -141,7 +141,7 @@
     return self;
 }
 
--(id)initWithCoder:(NSCoder *)aDecoder;
+-(instancetype)initWithCoder:(NSCoder *)aDecoder;
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
@@ -237,10 +237,8 @@ CWStaticColor(dimmedInvalidTextColor, [UIColor colorWithRed:0.63f green:0.59f bl
     static CGGradientRef g = NULL;
     if (g == NULL) {
         CGColorSpaceRef space = CGColorSpaceCreateDeviceRGB();
-        NSArray* colors = [NSArray arrayWithObjects:
-                           (id)[UIColor colorWithRed:0.96f green:0.96f blue:0.97f alpha:1].CGColor,
-                           (id)[UIColor colorWithRed:0.80f green:0.80f blue:0.82f alpha:1].CGColor,
-                           nil];
+        NSArray* colors = @[(id)[UIColor colorWithRed:0.96f green:0.96f blue:0.97f alpha:1].CGColor,
+                           (id)[UIColor colorWithRed:0.80f green:0.80f blue:0.82f alpha:1].CGColor];
         g = CGGradientCreateWithColors(space, (CFArrayRef)colors, (CGFloat[4]){0.f, 1.f});
         CGColorSpaceRelease(space);
     }
@@ -252,12 +250,10 @@ CWStaticColor(dimmedInvalidTextColor, [UIColor colorWithRed:0.63f green:0.59f bl
     static CGGradientRef g = NULL;
     if (g == NULL) {
         CGColorSpaceRef space = CGColorSpaceCreateDeviceRGB();
-        NSArray* colors = [NSArray arrayWithObjects:
-                           (id)[UIColor colorWithRed:0.74f green:0.85f blue:0.97f alpha:1].CGColor,
+        NSArray* colors = @[(id)[UIColor colorWithRed:0.74f green:0.85f blue:0.97f alpha:1].CGColor,
                            (id)[UIColor colorWithRed:0.45f green:0.69f blue:0.94f alpha:1].CGColor,
                            (id)[UIColor colorWithRed:0.17f green:0.54f blue:0.91f alpha:1].CGColor,
-                           (id)[UIColor colorWithRed:0.00f green:0.45f blue:0.89f alpha:1].CGColor,
-                           nil];
+                           (id)[UIColor colorWithRed:0.00f green:0.45f blue:0.89f alpha:1].CGColor];
         g = CGGradientCreateWithColors(space, (CFArrayRef)colors, (CGFloat[4]){0.02f, 0.06f, 0.5f, 0.51f});
         CGColorSpaceRelease(space);
     }
@@ -267,14 +263,14 @@ CWStaticColor(dimmedInvalidTextColor, [UIColor colorWithRed:0.63f green:0.59f bl
 -(NSDateFormatter*)dateFormatterWithFormat:(NSString*)format;
 {
     static NSMutableDictionary* fs = nil;
-    NSDateFormatter* f = [fs objectForKey:format];
+    NSDateFormatter* f = fs[format];
     if (f == nil) {
         f = [[[NSDateFormatter alloc] init] autorelease];
         [f setDateFormat:format];
         if (fs == nil) {
             fs = [[NSMutableDictionary alloc] initWithCapacity:4];
         }
-        [fs setObject:f forKey:format];
+        fs[format] = f;
     }
     return f;
 }

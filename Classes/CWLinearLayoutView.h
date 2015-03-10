@@ -31,12 +31,12 @@
 #import <UIKit/UIKit.h>
 
 
-typedef enum {
+typedef NS_ENUM(NSInteger, CWLinearLayoutRule) {
 	CWLinearLayoutRuleFixed = 0,		//! A fixed space, use specified space, or views bounds if space is 0.0f.
 	CWLinearLayoutRuleExactFit = 1,		//! Use exactly -[sizeThatFits:] space.
 	CWLinearLayoutRuleMaxFit = 2,		//! Use -[sizeThatFits:] or less.
 	CWLinearLayoutRuleFlexible = 3		//! Use a fraction of remaining space, space specifies importance. Aflexible view with 1.0 spave will get twice the space compared to a 0.5 view.
-} CWLinearLayoutRule;
+} ;
 
 /*!
  * @abstract The CWLinearLayoutView provide support for automated layout of subviews.

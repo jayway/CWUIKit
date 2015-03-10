@@ -52,7 +52,7 @@
  *			   This method creates a new image that is correctly rotated without 
  *			   meta-data if needed.
  */
--(UIImage*)normalizedImage;
+@property (NS_NONATOMIC_IOSONLY, readonly, strong) UIImage *normalizedImage;
 
 @end
 
@@ -61,9 +61,9 @@
 
 -(UIImage*)subimageWithRect:(CGRect)rect;
 
--(UIImage*)stretchableImageFromLeftCapOfImage;
--(UIImage*)stretchableImageFromMiddleOfImage;
--(UIImage*)stretchableImageFromRightCapOfImage;
+@property (NS_NONATOMIC_IOSONLY, readonly, strong) UIImage *stretchableImageFromLeftCapOfImage;
+@property (NS_NONATOMIC_IOSONLY, readonly, strong) UIImage *stretchableImageFromMiddleOfImage;
+@property (NS_NONATOMIC_IOSONLY, readonly, strong) UIImage *stretchableImageFromRightCapOfImage;
 
 @end
 

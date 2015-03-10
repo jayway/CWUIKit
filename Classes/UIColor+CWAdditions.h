@@ -40,13 +40,13 @@
 
 @property(nonatomic, readonly) CGFloat alpha; 
 
--(BOOL)canProvideRGBComponents;
+@property (NS_NONATOMIC_IOSONLY, readonly) BOOL canProvideRGBComponents;
 -(void)getRGBA:(CGFloat[4])pRGBA;
 @property(nonatomic, readonly) CGFloat red; 
 @property(nonatomic, readonly) CGFloat green; 
 @property(nonatomic, readonly) CGFloat blue; 
 
--(BOOL)canProvideHSVComponents;
+@property (NS_NONATOMIC_IOSONLY, readonly) BOOL canProvideHSVComponents;
 -(void)getHSVA:(CGFloat[4])pHSVA;
 @property (nonatomic, readonly) CGFloat hue;
 @property (nonatomic, readonly) CGFloat saturation;

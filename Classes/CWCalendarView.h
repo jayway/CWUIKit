@@ -128,6 +128,6 @@
 /*!
  * @abstract The designated initializer, initializing with a 320x308 frame.
  */
--(id)init;
+-(instancetype)init;
 
 @end

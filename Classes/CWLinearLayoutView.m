@@ -82,7 +82,7 @@
 
 #pragma mark --- Life cycle
 
--(id)initWithCoder:(NSCoder *)aDecoder;
+-(instancetype)initWithCoder:(NSCoder *)aDecoder;
 {
 	self = [super initWithCoder:aDecoder];
     if (self) {
@@ -124,7 +124,7 @@
 
 -(void)removeManagedSubviewAtIndex:(NSUInteger)index;
 {
-	CWLinearLayoutSubviewData* subview = [self.managedSubviewsData objectAtIndex:index];
+	CWLinearLayoutSubviewData* subview = (self.managedSubviewsData)[index];
     [subview.view removeFromSuperview];
     [self.managedSubviewsData removeObjectAtIndex:index];
     [self setNeedsLayout];
@@ -136,7 +136,7 @@
 {
     NSUInteger count = [self.managedSubviewsData count];
 	for (int index = 0; index < count; index++) {
-		CWLinearLayoutSubviewData* subview = [self.managedSubviewsData objectAtIndex:index];
+		CWLinearLayoutSubviewData* subview = (self.managedSubviewsData)[index];
         if (subview.rule == CWLinearLayoutRuleFixed) {
 			CGFloat width = subview.space <= 0 ? subview.view.bounds.size.width : subview.space;
             pWidths[index] = width;
@@ -154,7 +154,7 @@
 {
     NSUInteger count = [self.managedSubviewsData count];
 	for (int index = 0; index < count; index++) {
-		CWLinearLayoutSubviewData* subview = [self.managedSubviewsData objectAtIndex:index];
+		CWLinearLayoutSubviewData* subview = (self.managedSubviewsData)[index];
         if (subview.rule == CWLinearLayoutRuleMaxFit) {
         	CGFloat width = [subview.view sizeThatFits:CGSizeMake(*pTotalWidth, self.bounds.size.height)].width;
             pWidths[index] = width;
@@ -168,13 +168,13 @@
     NSUInteger count = [self.managedSubviewsData count];
     CGFloat totalFlex = 0;
 	for (int index = 0; index < count; index++) {
-		CWLinearLayoutSubviewData* subview = [self.managedSubviewsData objectAtIndex:index];
+		CWLinearLayoutSubviewData* subview = (self.managedSubviewsData)[index];
         if (subview.rule == CWLinearLayoutRuleFlexible) {
             totalFlex += subview.space;
         }
     }
 	for (int index = 0; index < count; index++) {
-		CWLinearLayoutSubviewData* subview = [self.managedSubviewsData objectAtIndex:index];
+		CWLinearLayoutSubviewData* subview = (self.managedSubviewsData)[index];
         if (subview.rule == CWLinearLayoutRuleFlexible) {
             CGFloat width = (*pTotalWidth) * (subview.space / totalFlex);
         	pWidths[index] = width;
@@ -188,7 +188,7 @@
 	CGFloat originX = 0;
     NSUInteger count = [self.managedSubviewsData count];
     for (int index = 0; index < count; index++) {
-		CWLinearLayoutSubviewData* subview = [self.managedSubviewsData objectAtIndex:index];
+		CWLinearLayoutSubviewData* subview = (self.managedSubviewsData)[index];
         if (subview.view) {
 			CGRect frame = subview.view.frame;
 			frame.origin.x = originX;
@@ -238,7 +238,7 @@
     return subview;
 }
 
--(id)initWithCoder:(NSCoder *)aDecoder;
+-(instancetype)initWithCoder:(NSCoder *)aDecoder;
 {
 	self = [self init];
     if (self) {

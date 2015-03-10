@@ -35,7 +35,7 @@
 
 @interface CWColumnTableViewCell ()
 
--(UIView*)currentAccessoryView;
+@property (NS_NONATOMIC_IOSONLY, readonly, strong) UIView *currentAccessoryView;
 
 @end
 
@@ -166,7 +166,7 @@
 	[self setupDefaultValues];
 }
 
--(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString*)reuseIdentifier;
+-(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString*)reuseIdentifier;
 {
 	self = [self initWithFrame:CGRectMake(0, 0, 320, 44)];
     if (self) {

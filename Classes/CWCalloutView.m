@@ -130,7 +130,7 @@ CGSize CWCalloutViewMinimumSize = {(CGFloat)(kCWCalloutViewCapWidth * 2 + kCWCal
     [self setNeedsLayout];
 }
 
-- (id)initWithFrame:(CGRect)frame;
+- (instancetype)initWithFrame:(CGRect)frame;
 {
     if ((self = [super initWithFrame:CGRectMake(0, 0, kCWCalloutViewCapWidth * 2 + kCWCalloutViewMiddleWidth, kCWCalloutViewHeight)])) {
 		[self setupInternalState];

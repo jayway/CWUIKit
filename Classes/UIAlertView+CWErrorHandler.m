@@ -37,7 +37,7 @@ static NSMutableDictionary* cw_recoveryErrors = nil;
 
 +(void)alertViewCancel:(UIAlertView *)alertView;
 {
-    NSError* error = [cw_recoveryErrors objectForKey:[NSValue valueWithPointer:(const void *)alertView]];
+    NSError* error = cw_recoveryErrors[[NSValue valueWithPointer:(const void *)alertView]];
 	id<CWErrorRecoveryAttempting> recoveryAttempter = [error recoveryAttempter];
     [recoveryAttempter attemptRecoveryFromError:error optionIndex:NSNotFound];
     [cw_recoveryErrors removeObjectForKey:[NSValue valueWithPointer:(const void *)alertView]];
@@ -45,7 +45,7 @@ static NSMutableDictionary* cw_recoveryErrors = nil;
 
 + (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex;
 {
-    NSError* error = [cw_recoveryErrors objectForKey:[NSValue valueWithPointer:(const void *)alertView]];
+    NSError* error = cw_recoveryErrors[[NSValue valueWithPointer:(const void *)alertView]];
 	NSInteger recoveryIndex = [[error localizedRecoveryOptions] indexOfObject:[alertView buttonTitleAtIndex:buttonIndex]];
 	id<CWErrorRecoveryAttempting> recoveryAttempter = [error recoveryAttempter];
     [recoveryAttempter attemptRecoveryFromError:error optionIndex:recoveryIndex];
@@ -73,8 +73,7 @@ static NSMutableDictionary* cw_recoveryErrors = nil;
     	if (cw_recoveryErrors == nil) {
 			cw_recoveryErrors = [[NSMutableDictionary alloc] initWithCapacity:4];            
         }
-        [cw_recoveryErrors setObject:error 
-                              forKey:[NSValue valueWithPointer:(const void *)alert]];
+        cw_recoveryErrors[[NSValue valueWithPointer:(const void *)alert]] = error;
         for (NSString* recoveryOption in [error localizedRecoveryOptions]) {
         	[alert addButtonWithTitle:recoveryOption];
         }
